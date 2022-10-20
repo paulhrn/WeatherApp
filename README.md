@@ -1,7 +1,7 @@
 # WeatherApp
 
-<div style="width: 1000px; height 600px;"><img src="./ScreenShots/weather.png" width="25%" height="25%" align="right"></div>
 <div style="width: 1000px; height 600px;"><img src="./ScreenShots/favourites.png" width="25%" height="25%" align="right"></div>
+<div style="width: 1000px; height 600px;"><img src="./ScreenShots/weather.png" width="25%" height="25%" align="right"></div>
 
 
 ## Overview
