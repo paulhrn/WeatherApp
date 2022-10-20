@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyCell" id="gXf-J1-2lF" customClass="DailyCell" customModule="WeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gXf-J1-2lF" id="bvC-dn-Vqc">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqg-KX-VEv">
+                        <rect key="frame" x="284" y="10" width="21" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVa-51-sdj">
+                        <rect key="frame" x="189" y="10" width="21" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HnZ-ud-GiH">
+                        <rect key="frame" x="15" y="10" width="23" height="23"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="8yJ-xb-xSJ"/>
+                            <constraint firstAttribute="width" constant="23" id="DrB-Ja-QuJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAm-gZ-Hx6">
+                        <rect key="frame" x="48" y="10" width="61" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wAm-gZ-Hx6" firstAttribute="top" secondItem="bvC-dn-Vqc" secondAttribute="top" constant="10" id="0wF-lQ-Nbh"/>
+                    <constraint firstAttribute="trailing" secondItem="Tqg-KX-VEv" secondAttribute="trailing" constant="15" id="1d9-6e-vVe"/>
+                    <constraint firstAttribute="trailing" secondItem="VVa-51-sdj" secondAttribute="trailing" constant="110" id="28h-cK-YHh"/>
+                    <constraint firstItem="wAm-gZ-Hx6" firstAttribute="leading" secondItem="HnZ-ud-GiH" secondAttribute="trailing" constant="10" id="7SC-dN-dBa"/>
+                    <constraint firstItem="HnZ-ud-GiH" firstAttribute="top" secondItem="bvC-dn-Vqc" secondAttribute="top" constant="10" id="9Ek-oU-hf5"/>
+                    <constraint firstAttribute="bottom" secondItem="Tqg-KX-VEv" secondAttribute="bottom" constant="10" id="OcU-ow-PZW"/>
+                    <constraint firstAttribute="bottom" secondItem="wAm-gZ-Hx6" secondAttribute="bottom" constant="10" id="XfS-4t-hCC"/>
+                    <constraint firstItem="HnZ-ud-GiH" firstAttribute="leading" secondItem="bvC-dn-Vqc" secondAttribute="leading" constant="15" id="b7P-KS-LKL"/>
+                    <constraint firstAttribute="bottom" secondItem="VVa-51-sdj" secondAttribute="bottom" constant="10" id="l8r-6z-jwJ"/>
+                    <constraint firstItem="Tqg-KX-VEv" firstAttribute="top" secondItem="bvC-dn-Vqc" secondAttribute="top" constant="10" id="mdT-Im-uLb"/>
+                    <constraint firstItem="VVa-51-sdj" firstAttribute="top" secondItem="bvC-dn-Vqc" secondAttribute="top" constant="10" id="vG3-ST-OiR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="FQG-ri-pWg"/>
+            <color key="backgroundColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.92844114789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="dayLabel" destination="wAm-gZ-Hx6" id="OBR-jZ-AQl"/>
+                <outlet property="maxTempLabel" destination="VVa-51-sdj" id="QQP-AP-QHY"/>
+                <outlet property="minTempLabel" destination="Tqg-KX-VEv" id="LBV-go-YAc"/>
+                <outlet property="weatherIcon" destination="HnZ-ud-GiH" id="MLT-Cf-wCZ"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="61.607142857142854"/>
+        </tableViewCell>
+    </objects>
+</document>
