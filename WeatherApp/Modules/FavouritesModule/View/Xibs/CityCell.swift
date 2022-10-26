@@ -39,8 +39,8 @@ class CityCell: UITableViewCell {
         let background = SKScene(size: spriteKitView.frame.size)
         spriteKitView.presentScene(background)
         
-        guard let color1 = UIColor.init(hex: gradient[0]) else { return }
-        guard let color2 = UIColor.init(hex: gradient[1]) else { return }
+        guard let color1 = UIColor.init(hex: gradient[0]),
+              let color2 = UIColor.init(hex: gradient[1]) else { return }
         
         let texture = SKTexture(size: CGSize(width: spriteKitView.frame.width, height: spriteKitView.frame.height),
                                 color1: CIColor(color: color1),

@@ -12,7 +12,7 @@ class FavouritesRouter {
     weak var view: UIViewController?
     
     func dismissScreen(output: ModuleOutput) {
-        guard let view = view else { return }
+        guard let view else { return }
         view.dismiss(animated: true)
     }
 }

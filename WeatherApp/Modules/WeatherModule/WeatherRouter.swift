@@ -13,8 +13,8 @@ class WeatherRouter: NSObject {
     weak var view: UIViewController?
     
     func showFavourites(output: ModuleOutput?) {
-        guard let view = view else { return }
-        guard let viewController = FavouritesAssembly.setupFavouritesModule(output: output) else { return }
+        guard let view,
+              let viewController = FavouritesAssembly.setupFavouritesModule(output: output) else { return }
         viewController.modalPresentationStyle = UIModalPresentationStyle.custom
         viewController.transitioningDelegate = self
         view.present(viewController, animated: true)

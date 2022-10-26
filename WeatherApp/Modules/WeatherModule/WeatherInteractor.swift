@@ -131,9 +131,9 @@ extension WeatherInteractor: CLLocationManagerDelegate {
             self.currentLocation = locations.first ?? CLLocation()
             locationService.getPosition(currentLocation: currentLocation, completion: { [weak self] city, lat, lon, error in
                 if error == nil {
-                    guard let city = city else { return }
-                    guard let lat = lat else { return }
-                    guard let lon = lon else { return }
+                    guard let city,
+                          let lat,
+                          let lon = lon else { return }
                     let newGeoData = GeoModel.init(city: city, lat: lat, lon: lon)
                     self?.getWeatherData(geoModel: newGeoData)
                     self?.saveCurrentLocation(geoModel: newGeoData)

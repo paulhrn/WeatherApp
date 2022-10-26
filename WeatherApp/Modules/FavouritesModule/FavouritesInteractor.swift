@@ -37,12 +37,15 @@ class FavouritesInteractor {
     func addNewCity(city: String) {
         locationService.getCityGeo(city: city) { [weak self] geo, error in
             if error == nil {
-                guard let geo = geo else { return }
+                guard let geo else { return }
                 self?.locationService.getPosition(currentLocation: geo) { [weak self] city, lat, lon, error in
-                    guard let city = city else { return }
-                    guard let lat = lat else { return }
-                    guard let lon = lon else { return }
+                    guard let city,
+                          let lat,
+                          let lon else { return }
                     let geoModel = GeoModel.init(city: city, lat: lat, lon: lon)
+                    if (self?.loadGeoModels().firstIndex(where: { $0.lat == lat && $0.lon == lon }) != nil) {
+                        return
+                    }
                     self?.locationsGeo.append(geoModel)
                     self?.weatherService.loadWeatherData(lat: geoModel.lat, lon: geoModel.lon) { [weak self] jsonData in
                         guard let newCity = self?.setupModel(jsonData: jsonData, geoModel: geoModel)  else { return }
@@ -107,10 +110,10 @@ class FavouritesInteractor {
             DispatchQueue.global().sync {
                 locationsGeo.forEach { geoModel in
                     self.weatherService.loadWeatherData(lat: geoModel.lat, lon: geoModel.lon) { jsonData in
-                        let favoriteCity = self.setupModel(jsonData: jsonData, geoModel: geoModel)
-                        let nodes = self.backgroundService.searchResultsAnimations(entity: favoriteCity)
-                        let gradient = self.backgroundService.searchResultsGradient(entity: favoriteCity)
-                        self.locationsList.append(favoriteCity)
+                        let newCity = self.setupModel(jsonData: jsonData, geoModel: geoModel)
+                        let nodes = self.backgroundService.searchResultsAnimations(entity: newCity)
+                        let gradient = self.backgroundService.searchResultsGradient(entity: newCity)
+                        self.locationsList.append(newCity)
                         self.animations.append(CellsAnimationModel.init(nodes: nodes, gradient: gradient))
                     }
                 }
@@ -135,9 +138,9 @@ class FavouritesInteractor {
     
     private func loadCurrentGeoModel() -> GeoModel? {
         let loadedModel = coreDataService.getWeatherModel()
-        guard let city = loadedModel?.city else { return nil }
-        guard let lat = loadedModel?.lat else { return nil }
-        guard let lon = loadedModel?.lon else { return nil }
+        guard let city = loadedModel?.city,
+              let lat = loadedModel?.lat,
+              let lon = loadedModel?.lon else { return nil }
         return GeoModel.init(city: city, lat: lat, lon: lon)
     }
     
