@@ -15,7 +15,7 @@ class DailyCell: UITableViewCell {
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var weatherIcon: UIImageView!
     
-    // MARK: - Life cycle
+    // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -25,7 +25,7 @@ class WeatherService {
         }.resume()
     }
     
-    // MARK: - Private funcs
+    // MARK: - Private Funcs
     private func prepareRequest(lat: CLLocationDegrees, lon: CLLocationDegrees) -> URL? {
         var components = URLComponents(string: ApiEnum.url)
         components?.queryItems = [URLQueryItem(name: QueryItemsEnum.lat, value: String(lat)),

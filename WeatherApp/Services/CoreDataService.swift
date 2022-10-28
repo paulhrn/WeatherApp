@@ -37,7 +37,7 @@ class CoreDataService {
         return model.last
     }
     
-    // MARK: - Private funcs
+    // MARK: - Private Funcs
     private func clearCoreDataValues() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "GeoModelEntity")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)

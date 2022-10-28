@@ -12,7 +12,7 @@ class WeatherPresentationController: UIPresentationController {
     let blurEffectView: UIVisualEffectView!
     var tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer()
     
-    // MARK: - Setup funcs
+    // MARK: - Funcs
     override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         let blurEffect = UIBlurEffect(style: .dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)

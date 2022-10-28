@@ -51,7 +51,7 @@ class WeatherViewController: UIViewController {
         presenter.showFavourites()
     }
     
-    // MARK: - Setups
+    // MARK: - Private Funcs
     private func setupUI() {
         setupAlert()
         setupFeelsLike()

@@ -26,7 +26,7 @@ class WeatherInteractor: NSObject {
     
     var isConnected: Bool = false
     
-    // MARK: - Protocol funcs
+    // MARK: - Protocol Funcs
     func locationAccessRequest() {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -47,7 +47,7 @@ class WeatherInteractor: NSObject {
         })
     }
     
-    // MARK: - Private funcs
+    // MARK: - Private Funcs
     private func saveEntity(entity: WeatherEntity) {
         let encoder = JSONEncoder()
         let data = try? encoder.encode(entity)

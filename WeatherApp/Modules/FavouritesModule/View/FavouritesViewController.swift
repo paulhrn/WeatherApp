@@ -17,14 +17,15 @@ class FavouritesViewController: UIViewController {
     var alertService: AlertService!
     
     var presenter: FavouritesPresenter!
-    // MARK: - Life cycle
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
         setupUI()
     }
     
-    // MARK: - Setups
+    // MARK: - Private Funcs
     private func setupUI() {
         setupSearchBar()
         setupLocationsTableView()
@@ -43,7 +44,7 @@ class FavouritesViewController: UIViewController {
         searchBar.setShowsCancelButton(false, animated: false)
     }
     
-    // MARK: - Private funcs
+    // MARK: - Private Funcs
     private func showNoSearchResultAlert() {
         alertService.noSearchResult(title: "City not found!",
                                     message: "Incorrect city name",

@@ -29,7 +29,7 @@ class FavouritesInteractor {
     var locationsList: [LocationModel] = []
     var animations: [CellsAnimationModel] = []
     
-    //MARK: - Protocol funcs
+    //MARK: - Protocol Funcs
     func loadEntity() {
         loadCitiesData()
     }
@@ -75,7 +75,7 @@ class FavouritesInteractor {
         loadCitiesData()
     }
     
-    //MARK: - Private funcs
+    //MARK: - Private Funcs
     private func setupModel(jsonData: WeatherRawEntity, geoModel: GeoModel) -> LocationModel {
         let cityName = geoModel.city
         let lat = geoModel.lat

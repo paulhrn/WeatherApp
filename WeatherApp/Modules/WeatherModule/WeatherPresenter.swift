@@ -13,16 +13,15 @@ protocol WeatherPresenterOutput: AnyObject {
 }
 
 class WeatherPresenter {
-    internal var model: GeoModel?
+    
+    var model: GeoModel?
     
     weak var presenterOutput: WeatherPresenterOutput?
-    
     var coreDataService: CoreDataService?
-    
     var interactor: WeatherInteractor!
     var router: WeatherRouter!
     
-    // MARK: - Protocol funcs
+    // MARK: - Protocol Funcs
     func viewDidLoad() {
         interactor.locationAccessRequest()
         interactor.checkConnection()

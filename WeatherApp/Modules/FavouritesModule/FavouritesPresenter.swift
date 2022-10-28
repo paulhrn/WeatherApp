@@ -24,18 +24,13 @@ class FavouritesPresenter {
     var router: FavouritesRouter!
     var output: ModuleOutput?
     
-    // MARK: - Protocol funcs
-    
+    // MARK: - Protocol Funcs
     func viewDidLoad() {
         interactor.loadEntity()
     }
     
     func addCity(city: String) {
         interactor.addNewCity(city: city)
-    }
-    
-    func dismissFavouritesScreen() {
-        router.dismissScreen(output: self)
     }
     
     func getWeatherForCity(city: String, lat: Double, lon: Double) {
@@ -68,10 +63,3 @@ extension FavouritesPresenter: FavouritesInteractorOutput {
         output?.didUpdateModel(model: model)
     }
 }
-
-extension FavouritesPresenter: ModuleOutput {
-    func didUpdateModel(model: GeoModel) {
-        
-    }
-}
-

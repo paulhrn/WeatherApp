@@ -17,7 +17,7 @@ class CityCell: UITableViewCell {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var maxMinLabel: UILabel!
     
-    // MARK: - Life cycle
+    // MARK: - Life Cycle
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10))
@@ -28,7 +28,7 @@ class CityCell: UITableViewCell {
         setupUI()
     }
     
-    // MARK: - Setup funcs
+    // MARK: - Funcs
     private func setupUI() {
         spriteKitView.layer.cornerRadius = 15
         spriteKitView.clipsToBounds = true
