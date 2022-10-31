@@ -33,6 +33,10 @@ class FavouritesPresenter {
         interactor.addNewCity(city: city)
     }
     
+    func dismissFavouritesScreen() {
+        router.dismissScreen(output: self)
+    }
+    
     func getWeatherForCity(city: String, lat: Double, lon: Double) {
         interactor.setupGeoModel(city: city, lat: lat, lon: lon)
     }
@@ -61,5 +65,11 @@ extension FavouritesPresenter: FavouritesInteractorOutput {
     
     func updateGeoModel(model: GeoModel) {
         output?.didUpdateModel(model: model)
+    }
+}
+
+extension FavouritesPresenter: ModuleOutput {
+    func didUpdateModel(model: GeoModel) {
+        
     }
 }
